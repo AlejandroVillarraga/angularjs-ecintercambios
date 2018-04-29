@@ -1,0 +1,24 @@
+<div class="container">
+    <font size="5" color="grey">Categorías:</font>
+    <p><font size="4" color="grey">Selecciona el objeto que necesitas que algun colega te preste...</font>
+    </p>
+<div class="row">
+
+
+    <div *ngFor="let cl of objetoList" class="col-xs-6 col-xs-3">
+        <br>
+
+        <a (click)="saveCategory(cl.name)" routerLinkActive="/prestadores" routerLink="/prestadores"  class="btn btn1" role="button" aria-pressed="true">
+            {{cl.name}}
+            <div class="card text-center">
+                <img class="category" src="{{cl.image}}" width="299px" height="299px">
+                <div class="card-img-overlay">
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </a>
+        <br>
+    </div>
+</div>
+</div>

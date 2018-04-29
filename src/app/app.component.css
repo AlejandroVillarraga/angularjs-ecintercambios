@@ -1,0 +1,40 @@
+.navbar {
+    background-image: url("/assets/fondonavbar.jpg");
+    box-shadow: 10px 10px 30px #999;
+}
+
+
+.styleA{
+    background-color:rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 8px 15px;
+    text-aling: center;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.9s;
+        cursor: pointer;
+
+}
+
+.navbar-brand{
+    background-color:rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 8px 15px;
+    text-aling: center;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.9s;
+        cursor: pointer;
+}
+
+.styleA:hover {
+    background-color: white;
+    color: #0e6ebe;
+}
+
+.navbar-brand:hover{
+    background-color: white;
+    color: #0e6ebe;
+}

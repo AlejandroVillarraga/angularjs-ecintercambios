@@ -1,0 +1,29 @@
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="card" >
+        <h2>Ingresa a ECIntercambios</h2>
+        <hr>
+        <form [formGroup]="signInForm" (ngSubmit)="doLogin()" novalidate>
+            <div class="form-group" >
+                <label for="email">Email</label>
+                <div class="row" align="center">
+                    <input type="text" class="form-control inpCorto" id="email" formControlName="email" required><font size="4">@mail.escuelaing.edu.co</font>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="priority">Constraseña</label>
+                <input type="password" class="form-control inpCorto" id="alterEgo" formControlName="password" required>
+            </div>
+
+            <button type="submit" class="btn btn-success" [disabled]="!signInForm.valid">Ingresa</button>
+
+            <p class="text-danger mt-1" *ngIf="loginError">{{loginError}}</p>
+
+        </form>
+        <hr>
+        <a routerLinkActive="/signup" routerLink="/signup" >¿Aun no estas registrado? Registrate aqui.</a>
+    </div>
+</div>

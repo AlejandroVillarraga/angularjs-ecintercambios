@@ -1,0 +1,170 @@
+<div class="container">
+    <br>
+
+
+    <div class="card" >
+        <h2>Registrate</h2>
+        <br>
+        <p>Selecciona un objeto para prestar:</p>
+        <div class="dropdown">
+            <span class="styleA">Objeto: {{objeto}}</span>
+            <div class="dropdown-content">
+                <a class="nav-link"  (click)="saveObjeto(ob.name)" *ngFor="let ob of objetoList">{{ob.name}}</a>
+            </div>
+        </div>
+        <br>
+
+        <form [formGroup]="signUpForm" (ngSubmit)="ofrecerObjeto()" novalidate>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <input type="text" class="form-control" id="descripcion" formControlName="descripcion" required>
+            </div>
+
+            <div class="form-group" >
+                <label for="precio">Precio</label>
+                <div class="row" align="center">
+                    <input type="text" class="form-control inpCorto" id="precio" formControlName="precio" required><font size="5">COP</font>
+                </div>
+            </div>
+            <h2>Horarios</h2>
+            <hr>
+            <div class="row" align="center">
+                <h5>1er horario: </h5>&nbsp;
+                <div class="dropdown">
+                    <span class="styleA">Dia: {{dia1}}</span>
+                    <div class="dropdown-content">
+                        <a class="nav-link" (click)="saveDia('Lunes')" >Lunes</a>
+                        <a class="nav-link" (click)="saveDia('Martes')" >Martes</a>
+                        <a class="nav-link" (click)="saveDia('Miercoles')" >Miercoles</a>
+                        <a class="nav-link" (click)="saveDia('Jueves')" >Jueves</a>
+                        <a class="nav-link" (click)="saveDia('Viernes')" >Viernes</a>
+                        <a class="nav-link" (click)="saveDia('Sabado')" >Sabado</a>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="dropdown">
+                    <span class="styleA">Desde: {{hora_inicio1}}</span>
+                    <div class="dropdown-content">
+                        <a class="nav-link" (click)="saveHoraInicio('07:00')" >07:00</a>
+                        <a class="nav-link" (click)="saveHoraInicio('08:30')" >08:30</a>
+                        <a class="nav-link" (click)="saveHoraInicio('10:00')" >10:00</a>
+                        <a class="nav-link" (click)="saveHoraInicio('11:30')" >11:30</a>
+                        <a class="nav-link" (click)="saveHoraInicio('01:00')" >01:00</a>
+                        <a class="nav-link" (click)="saveHoraInicio('02:30')" >02:30</a>
+                        <a class="nav-link" (click)="saveHoraInicio('04:00')" >04:00</a>
+                        <a class="nav-link" (click)="saveHoraInicio('05:30')" >05:30</a>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="dropdown">
+                    <span class="styleA">Hasta: {{hora_fin1}}</span>
+                    <div class="dropdown-content">
+                        <a class="nav-link" (click)="saveHoraFin('08:30')" >08:30</a>
+                        <a class="nav-link" (click)="saveHoraFin('10:00')" >10:00</a>
+                        <a class="nav-link" (click)="saveHoraFin('11:30')" >11:30</a>
+                        <a class="nav-link" (click)="saveHoraFin('01:00')" >01:00</a>
+                        <a class="nav-link" (click)="saveHoraFin('02:30')" >02:30</a>
+                        <a class="nav-link" (click)="saveHoraFin('04:00')" >04:00</a>
+                        <a class="nav-link" (click)="saveHoraFin('05:30')" >05:30</a>
+                        <a class="nav-link" (click)="saveHoraFin('07:00')" >07:00</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" align="center">
+                <h5>2do horario: </h5>
+                &nbsp;
+                <div class="dropdown">
+                    <span class="styleA">Dia: {{dia2}}</span>
+                    <div class="dropdown-content">
+                        <a class="nav-link" (click)="saveDia2('Lunes')" >Lunes</a>
+                        <a class="nav-link" (click)="saveDia2('Martes')" >Martes</a>
+                        <a class="nav-link" (click)="saveDia2('Miercoles')" >Miercoles</a>
+                        <a class="nav-link" (click)="saveDia2('Jueves')" >Jueves</a>
+                        <a class="nav-link" (click)="saveDia2('Viernes')" >Viernes</a>
+                        <a class="nav-link" (click)="saveDia2('Sabado')" >Sabado</a>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="dropdown">
+                    <span class="styleA">Desde: {{hora_inicio2}}</span>
+                    <div class="dropdown-content">
+                        <a class="nav-link" (click)="saveHoraInicio2('07:00')" >07:00</a>
+                        <a class="nav-link" (click)="saveHoraInicio2('08:30')" >08:30</a>
+                        <a class="nav-link" (click)="saveHoraInicio2('10:00')" >10:00</a>
+                        <a class="nav-link" (click)="saveHoraInicio2('11:30')" >11:30</a>
+                        <a class="nav-link" (click)="saveHoraInicio2('01:00')" >01:00</a>
+                        <a class="nav-link" (click)="saveHoraInicio2('02:30')" >02:30</a>
+                        <a class="nav-link" (click)="saveHoraInicio2('04:00')" >04:00</a>
+                        <a class="nav-link" (click)="saveHoraInicio2('05:30')" >05:30</a>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="dropdown">
+                    <span class="styleA">Hasta: {{hora_fin2}}</span>
+                    <div class="dropdown-content">
+                        <a class="nav-link" (click)="saveHoraFin2('08:30')" >08:30</a>
+                        <a class="nav-link" (click)="saveHoraFin2('10:00')" >10:00</a>
+                        <a class="nav-link" (click)="saveHoraFin2('11:30')" >11:30</a>
+                        <a class="nav-link" (click)="saveHoraFin2('01:00')" >01:00</a>
+                        <a class="nav-link" (click)="saveHoraFin2('02:30')" >02:30</a>
+                        <a class="nav-link" (click)="saveHoraFin2('04:00')" >04:00</a>
+                        <a class="nav-link" (click)="saveHoraFin2('05:30')" >05:30</a>
+                        <a class="nav-link" (click)="saveHoraFin2('07:00')" >07:00</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row" align="center">
+                <h5>3er horario: </h5>
+                &nbsp;
+                <div class="dropdown">
+                    <span class="styleA">Dia: {{dia3}}</span>
+                    <div class="dropdown-content">
+                        <a class="nav-link" (click)="saveDia3('Lunes')" >Lunes</a>
+                        <a class="nav-link" (click)="saveDia3('Martes')" >Martes</a>
+                        <a class="nav-link" (click)="saveDia3('Miercoles')" >Miercoles</a>
+                        <a class="nav-link" (click)="saveDia3('Jueves')" >Jueves</a>
+                        <a class="nav-link" (click)="saveDia3('Viernes')" >Viernes</a>
+                        <a class="nav-link" (click)="saveDia3('Sabado')" >Sabado</a>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="dropdown">
+                    <span class="styleA">Desde: {{hora_inicio3}}</span>
+                    <div class="dropdown-content">
+                        <a class="nav-link" (click)="saveHoraInicio3('07:00')" >07:00</a>
+                        <a class="nav-link" (click)="saveHoraInicio3('08:30')" >08:30</a>
+                        <a class="nav-link" (click)="saveHoraInicio3('10:00')" >10:00</a>
+                        <a class="nav-link" (click)="saveHoraInicio3('11:30')" >11:30</a>
+                        <a class="nav-link" (click)="saveHoraInicio3('01:00')" >01:00</a>
+                        <a class="nav-link" (click)="saveHoraInicio3('02:30')" >02:30</a>
+                        <a class="nav-link" (click)="saveHoraInicio3('04:00')" >04:00</a>
+                        <a class="nav-link" (click)="saveHoraInicio3('05:30')" >05:30</a>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="dropdown">
+                    <span class="styleA">Hasta: {{hora_fin3}}</span>
+                    <div class="dropdown-content">
+                        <a class="nav-link" (click)="saveHoraFin3('08:30')" >08:30</a>
+                        <a class="nav-link" (click)="saveHoraFin3('10:00')" >10:00</a>
+                        <a class="nav-link" (click)="saveHoraFin3('11:30')" >11:30</a>
+                        <a class="nav-link" (click)="saveHoraFin3('01:00')" >01:00</a>
+                        <a class="nav-link" (click)="saveHoraFin3('02:30')" >02:30</a>
+                        <a class="nav-link" (click)="saveHoraFin3('04:00')" >04:00</a>
+                        <a class="nav-link" (click)="saveHoraFin3('05:30')" >05:30</a>
+                        <a class="nav-link" (click)="saveHoraFin3('07:00')" >07:00</a>
+                    </div>
+                </div>
+            </div>
+
+                       <hr>
+
+            <button type="submit" class="styleA" [disabled]="!signUpForm.valid">Ofrecer {{objeto}}</button>
+
+        </form>
+    </div>
+</div>

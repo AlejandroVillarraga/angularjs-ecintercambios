@@ -1,0 +1,6 @@
+insert into horarios_disponibles values
+	(4,'Martes','01:00','07:00','Mayo',3),
+	(3,'Lunes','01:00','07:00','Mayo',3),
+	(2,'Lunes','01:00','07:00','Mayo',2),
+	(1,'Lunes','10:00','07:00','Mayo',1)
+;

@@ -1,0 +1,59 @@
+<div *ngFor="let cl of objetosOfrecidosList" class="col-xs-6 col-xs-3">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="card"  style="width:1050px">
+                <div class="row ">
+                    <div class="col-sm-4">
+                        <div class="card-block px-3">
+                            <img class="category" src="/assets/generos/{{cl.user.genero}}.svg" width="150px" height="150px">
+                            <hr>
+                            <font size="3">{{cl.user.name}}</font>
+                            <hr>
+                            <img class="category" src="/assets/estrellas/{{cl.user.calificacion}}.png" width="200px" height="40px">
+                            <hr>
+                            <font size="1">Número de opiniones: {{cl.user.numeroDeOpiniones}}</font>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <br>
+                        <img class="category" src="{{cl.objeto_ofrecido.image}}" width="199px" height="199px">
+                        <p>{{cl.objeto_ofrecido.name}}</p>
+                        <p>Precio: ${{cl.precio}} COP</p>
+                        <p>Descripción: {{cl.descripcion}}</p>
+                    </div>
+
+                    <div  class="col-sm-4">
+                        <br>
+                        Disponibilidad
+                        <div *ngFor="let hd of cl.horariosDisponibles" class="col-xs-6 col-xs-3">
+                            <hr>
+                            <div class="horariosDiv">
+                                <p>
+                                    <font size="3" >{{hd.dia}}</font>
+                                </p>
+                                <p>
+                                    <font size="3" >Horario: {{hd.hora_inicio}} a  {{hd.hora_fin}}</font>
+                                </p>
+                                <div *ngIf="isLoggedIn()">
+                                    <a  routerLinkActive="/solicitud" routerLink="/solicitud" (click)="saveData(cl.id, hd.id)">Solicitar {{cl.objeto_ofrecido.name}} en este horario</a>
+                                </div>
+                                <div *ngIf="!isLoggedIn()">
+                                    <a routerLinkActive="/signin" routerLink="/signin" >Solicitar {{cl.objeto_ofrecido.name}} en este horario</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    <hr>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<font size="3" color="red">{{errorText}}</font>
