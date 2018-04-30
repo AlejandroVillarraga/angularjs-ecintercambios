@@ -19,8 +19,7 @@ export class AppComponent {
     if (!this.authService.isLoggedIn()) {
       this.router.navigate(['/objetos']);
     }
-    //sessionStorage.setItem("currentUser", "-1");
-    //this.signOut();
+
   }
 
   isLoggedIn() {

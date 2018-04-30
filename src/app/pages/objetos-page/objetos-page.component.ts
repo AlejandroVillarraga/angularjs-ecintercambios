@@ -14,6 +14,7 @@ export class ObjetosPageComponent implements OnInit {
   constructor(public objetoService: ObjetoService) { }
 
   ngOnInit() {
+    console.log("ESTO EN Objetos "+sessionStorage.getItem("currentUser"));
     window.scroll(0,0)
     this.objetoService.getObjetos().subscribe(objetoResponse=>{
        this.objetoList = objetoResponse;

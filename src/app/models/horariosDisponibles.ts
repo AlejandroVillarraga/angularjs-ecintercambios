@@ -11,6 +11,7 @@ constructor(dia: string, hora_inicio:string, hora_fin:string) {
         this.hora_inicio=hora_inicio;
         this.hora_fin=hora_fin;
     }
+
 }
 
 

@@ -6,6 +6,7 @@ import { APIService } from '.././common/api.service';
 import { AppConfiguration } from '.././common/config/app-configuration.service';
 import { AuthService } from '.././common/auth.service';
 import {ObjetoOfrecido} from '.././models/objetoOfrecido';
+import {Prestamo} from '.././models/prestamo';
 
 import {HorariosDisponibles} from '.././models/horariosDisponibles';
 import {Observable} from 'rxjs/Observable';
@@ -41,6 +42,20 @@ constructor(
   addHorarioDisponible(hd: HorariosDisponibles){
     return this.post(this.resourceUrl+"agregarHorario", hd);
   }
+
+  getObjetoOfrecido(id: string): Observable<ObjetoOfrecido> {
+    return this.get(this.resourceUrl+"getById/"+id);
+  }
+
+  savePrestamo(prestamo: Prestamo):  Observable<Prestamo>{
+    return this.post("prestamo/savePrestamo",prestamo);
+  }
+
+
+
+
+
+
 
 
 

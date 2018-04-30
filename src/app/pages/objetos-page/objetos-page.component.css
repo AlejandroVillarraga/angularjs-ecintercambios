@@ -18,7 +18,7 @@
 }
 
 .btn {
-        background: white;
+        background: black;
         width: 300px;
         height: 300px;
         padding: 0px;
@@ -29,13 +29,13 @@
     transition-duration: 0.4s;
     cursor: pointer;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-        background-color: white;
+        background-color: #3188F7;
         color: black;
 }
 
 
 .btn:hover {
-    color: black;
+    color: white;
     font-size: 30px;
 
 }
@@ -58,4 +58,14 @@
     transition-duration: 1s;
     opacity: 0.3;
 }
+
+.category {
+        border-radius: 50%;
+}
+
+.text-center{
+    border-radius: 100px 20px;
+}
+
+
 

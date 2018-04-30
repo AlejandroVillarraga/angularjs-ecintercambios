@@ -38,6 +38,10 @@ constructor(
     return this.get("user/byEmail/"+data);
   }
 
+  getUser(email: string): Observable<User> {
+    return this.get("user/byEmail/"+email);
+  }
+
   addObjetoOfrecido(obf: ObjetoOfrecido): Observable<ObjetoOfrecido> {
     var data = sessionStorage.getItem("currentUser")+"@mail.escuelaing.edu.co.";
     console.log(data);

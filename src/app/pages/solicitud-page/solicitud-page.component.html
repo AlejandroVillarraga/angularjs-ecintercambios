@@ -1,5 +1,49 @@
 <br>
 <br>
 <br>
-<br>
-Solicitud PAGE
+
+
+<div class="card"  style="width:1050px">
+    <div class="row ">
+        <div class="col-sm-4">
+            <div class="card-block px-3">
+                <img class="category" src="/assets/generos/{{objetoActual.user.genero}}.svg" width="150px" height="150px">
+                <hr>
+                <font size="3">{{objetoActual.user.name}}</font>
+                <hr>
+                <img class="category" src="/assets/estrellas/{{objetoActual.user.calificacion}}.png" width="200px" height="40px">
+
+                <hr>
+                <font size="1">Número de opiniones: {{objetoActual.user.numeroDeOpiniones}}</font>
+                <hr>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <br>
+            <img class="category" src="{{objetoActual.objeto_ofrecido.image}}" width="199px" height="199px">
+            <p>{{objetoActual.objeto_ofrecido.name}}</p>
+            <p>Precio: ${{objetoActual.precio}} COP</p>
+            <p>Descripción: {{objetoActual.descripcion}}</p>
+        </div>
+
+        <div  class="col-sm-4">
+            <br>
+            Horario
+            <div  class="col-xs-6 col-xs-3">
+                <hr>
+                <div class="horariosDiv">
+                    <p>
+                        <font size="3" >{{horarioDActual.dia}}</font>
+                    </p>
+                    <p>
+                        <font size="3" >Horario: {{horarioDActual.hora_inicio}} a  {{horarioDActual.hora_fin}}</font>
+                    </p>
+                </div>
+
+            </div>
+            <hr>
+        </div>
+    </div>
+
+
+</div>

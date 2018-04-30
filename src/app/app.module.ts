@@ -31,9 +31,10 @@ import { SignInPageComponent } from './pages/sign-in/sign-in-page.component';
 import { SignUpPageComponent } from './pages/sign-up/sign-up-page.component';
 
 import { UsersService } from './services/users.service';
-
+import { HorariosDisponiblesService } from './services/horariosDisponibles.service';
 import { ObjetoService } from './services/objeto.service';
 import { ObjetoOfrecidoService } from './services/objetoOfrecido.service';
+
 
 
 
@@ -71,7 +72,7 @@ const ROUTES = [
     {
       provide: INITIAL_CONFIG,
       useValue: {
-        apiURL: 'https://ecintercambios.herokuapp.com'
+        apiURL: 'http://localhost:8080'
       }
     },
     AppConfiguration,
@@ -80,7 +81,8 @@ const ROUTES = [
     AppDataService,
     UsersService,
     ObjetoService,
-    ObjetoOfrecidoService
+    ObjetoOfrecidoService,
+    HorariosDisponiblesService
   ],
   bootstrap: [AppComponent]
 })
