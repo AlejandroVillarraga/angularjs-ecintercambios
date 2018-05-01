@@ -27,7 +27,7 @@ export class SignInPageComponent implements OnInit {
 
   doLogin() {
     sessionStorage.setItem("currentUser", this.signInForm.get('email').value);
-    console.log("ESTO EN SIGN IN"+sessionStorage.getItem("currentUser"));
+
     this.loginError="";
     this.usersService.login(
       this.signInForm.get('email').value+"@mail.escuelaing.edu.co",

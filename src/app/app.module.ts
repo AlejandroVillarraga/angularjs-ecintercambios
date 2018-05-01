@@ -72,7 +72,7 @@ const ROUTES = [
     {
       provide: INITIAL_CONFIG,
       useValue: {
-        apiURL: 'http://localhost:8080'
+        apiURL: 'https://ecintercambios.herokuapp.com'
       }
     },
     AppConfiguration,

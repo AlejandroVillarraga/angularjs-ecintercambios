@@ -34,7 +34,6 @@ constructor(
 
   getUserByEmail(): Observable<User> {
     var data = sessionStorage.getItem("currentUser")+"@mail.escuelaing.edu.co.";
-    console.log(data);
     return this.get("user/byEmail/"+data);
   }
 
@@ -44,7 +43,6 @@ constructor(
 
   addObjetoOfrecido(obf: ObjetoOfrecido): Observable<ObjetoOfrecido> {
     var data = sessionStorage.getItem("currentUser")+"@mail.escuelaing.edu.co.";
-    console.log(data);
     return this.post("user/addObjetoOfrecido/"+data,obf);
 
   }

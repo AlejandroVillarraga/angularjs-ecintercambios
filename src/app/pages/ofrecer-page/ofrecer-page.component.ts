@@ -59,9 +59,7 @@ export class OfrecerPageComponent implements OnInit {
             var obf: ObjetoOfrecido;
             obf = new ObjetoOfrecido(this.userTemp, this.objetoTemp, this.signUpForm.get('descripcion').value, this.signUpForm.get('precio').value);
             this.usersService.addObjetoOfrecido(obf).subscribe(objetoResponse=>{
-                console.log(objetoResponse);
                 obf = objetoResponse;
-                console.log(objetoResponse);
                 window.alert("Ya fue creado");
                 this.router.navigate(['objetos']);
                 this.objetoOfrecidoService.addHorarioDisponible(new HorariosDisponibles(this.dia1,this.hora_inicio1,this.hora_fin1)).subscribe(objetoResponse=>{
