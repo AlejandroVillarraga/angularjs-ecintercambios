@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ObjetoOfrecidoService } from '../../services/objetoOfrecido.service';
-import { ObjetoOfrecido } from '../../models/objetoOfrecido';
+import { PrestamoService } from '../../services/prestamo.service';
 
-import { HorariosDisponiblesService } from '../../services/horariosDisponibles.service';
-import { HorariosDisponibles } from '../../models/horariosDisponibles';
+import { Prestamo } from '../../models/prestamo';
 
 @Component({
   selector: 'app-solicitud-page',
@@ -12,31 +10,31 @@ import { HorariosDisponibles } from '../../models/horariosDisponibles';
 })
 export class SolicitudPageComponent implements OnInit {
 
-    private objetoId:string;
-    private horarioId:string;
-    private objetoActual: ObjetoOfrecido;
-    private horarioDActual: HorariosDisponibles;
+  private misSolicitudes: Prestamo[] = [];
+  private misObjetosPrestados: Prestamo[] = [];
 
-  constructor(public objetoOfrecidoService: ObjetoOfrecidoService,
-                public horariosDisponiblesService: HorariosDisponiblesService) { }
+  constructor(public prestamoService: PrestamoService) { }
 
 
   ngOnInit() {
+
     window.scroll(0,0)
-    this.objetoId = sessionStorage.getItem("objetoSolicitadoId");
-    this.horarioId = sessionStorage.getItem("horarioSolicitadoId");
 
-    this.objetoOfrecidoService.getObjetoOfrecido(this.objetoId).subscribe(objetoResponse => {
-            this.objetoActual=objetoResponse;
-      }, error => {
+    this.prestamoService.getMisObjetosPrestados().subscribe(prestamoResponse=>{
+       this.misObjetosPrestados = prestamoResponse;
+        console.log(this.misObjetosPrestados);
 
-      })
+        this.prestamoService.getMisSolicitudes().subscribe(prestamoResponse=>{
+           this.misSolicitudes = prestamoResponse;
+            console.log(this.misSolicitudes);
+        })
 
-    this.horariosDisponiblesService.getHorarioById(this.horarioId).subscribe(horarioResponse => {
-            this.horarioDActual=horarioResponse;
-      }, error => {
+    })
 
-      })
+
+
+
+
   }
 
 }

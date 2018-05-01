@@ -17,6 +17,8 @@ import { ObjetosPageComponent } from './pages/objetos-page/objetos-page.componen
 import { PrestadoresPageComponent } from './pages/prestadores-page/prestadores-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
+
+import { PrestamoService } from './services/prestamo.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -82,7 +84,8 @@ const ROUTES = [
     UsersService,
     ObjetoService,
     ObjetoOfrecidoService,
-    HorariosDisponiblesService
+    HorariosDisponiblesService,
+    PrestamoService
   ],
   bootstrap: [AppComponent]
 })

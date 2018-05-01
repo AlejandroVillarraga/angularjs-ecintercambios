@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ObjetoOfrecidoService } from '../../services/objetoOfrecido.service';
 import { ObjetoOfrecido } from '../../models/objetoOfrecido';
-
+import { Router } from '@angular/router';
 import { HorariosDisponiblesService } from '../../services/horariosDisponibles.service';
 import { HorariosDisponibles } from '../../models/horariosDisponibles';
 import { AuthService } from '../../common/auth.service';
@@ -29,6 +29,7 @@ export class PrestadoresPageComponent implements OnInit {
 
   constructor(public objetoOfrecidoService: ObjetoOfrecidoService,
                 public authService: AuthService,
+                public router: Router,
                 public horariosDisponiblesService: HorariosDisponiblesService,
                 public usersService: UsersService) { }
 
@@ -72,7 +73,7 @@ export class PrestadoresPageComponent implements OnInit {
 
 
                                                     this.objetoOfrecidoService.savePrestamo(prestamo).subscribe(prestamoResponse => {
-
+                                                              this.router.navigate(['/objetos']);
 
 
                                                       }, error => {

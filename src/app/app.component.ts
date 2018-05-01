@@ -19,7 +19,8 @@ export class AppComponent {
     if (!this.authService.isLoggedIn()) {
       this.router.navigate(['/objetos']);
     }
-
+    this.router.navigate(['/objetos']);
+    this.signOut();
   }
 
   isLoggedIn() {

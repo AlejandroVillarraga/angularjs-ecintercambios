@@ -37,7 +37,7 @@
                                     <font size="3" >Horario: {{hd.hora_inicio}} a  {{hd.hora_fin}}</font>
                                 </p>
                                 <div *ngIf="isLoggedIn()">
-                                    <a  routerLinkActive="/objetos" routerLink="/objetos" (click)="saveData(cl.id, hd.id, cl.user.email)">Solicitar {{cl.objeto_ofrecido.name}} en este horario</a>
+                                    <a  routerLinkActive="/home" routerLink="/home" (click)="saveData(cl.id, hd.id, cl.user.email)">Solicitar {{cl.objeto_ofrecido.name}} en este horario</a>
                                 </div>
                                 <div *ngIf="!isLoggedIn()">
                                     <a  routerLinkActive="/signin" routerLink="/signin" >Solicitar {{cl.objeto_ofrecido.name}} en este horario</a>

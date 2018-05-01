@@ -1,49 +1,123 @@
 <br>
 <br>
+<h1>Mis Solicitudes</h1>
+<font size="3" color="grey">Más abajo encontraras las solicitudes que han realizado para tus objetos.</font>
 <br>
+<font size="5">A continuación, lo que has solicitado prestado:</font>
+
+<div class="row">
+
+    <div *ngFor="let misSol of misSolicitudes" class="col-xs-6 col-xs-3">
+          <div class="card"  style="width:900px">
+            <div class="row ">
+                <div class="col-sm-5">
+
+                    <font size="4">{{misSol.objetoOfrecido.objeto_ofrecido.name}}</font>
+                    <br>
+                    <img class="category" src="{{misSol.objetoOfrecido.objeto_ofrecido.image}}" width="100px" height="100px">
+                    <hr>
+                    <font size="4">{{misSol.objetoOfrecido.descripcion}}</font>
+                    <hr>
+                    <font size="4"><font size="3" color="grey">Precio: </font>${{misSol.objetoOfrecido.precio}} COP</font>
+                    <br>
+                    <font size="4"><font size="3" color="grey">Dia: </font>{{misSol.horariosDisponibles.dia}}</font>
+                    <br>
+                    <font size="4"><font size="3" color="grey">Desde: </font> {{misSol.horariosDisponibles.hora_inicio}}</font>
+                    <br>
+                    <font size="4"><font size="3" color="grey">Hasta: </font> {{misSol.horariosDisponibles.hora_fin}}</font>
 
 
-<div class="card"  style="width:1050px">
-    <div class="row ">
-        <div class="col-sm-4">
-            <div class="card-block px-3">
-                <img class="category" src="/assets/generos/{{objetoActual.user.genero}}.svg" width="150px" height="150px">
-                <hr>
-                <font size="3">{{objetoActual.user.name}}</font>
-                <hr>
-                <img class="category" src="/assets/estrellas/{{objetoActual.user.calificacion}}.png" width="200px" height="40px">
-
-                <hr>
-                <font size="1">Número de opiniones: {{objetoActual.user.numeroDeOpiniones}}</font>
-                <hr>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <br>
-            <img class="category" src="{{objetoActual.objeto_ofrecido.image}}" width="199px" height="199px">
-            <p>{{objetoActual.objeto_ofrecido.name}}</p>
-            <p>Precio: ${{objetoActual.precio}} COP</p>
-            <p>Descripción: {{objetoActual.descripcion}}</p>
-        </div>
-
-        <div  class="col-sm-4">
-            <br>
-            Horario
-            <div  class="col-xs-6 col-xs-3">
-                <hr>
-                <div class="horariosDiv">
-                    <p>
-                        <font size="3" >{{horarioDActual.dia}}</font>
-                    </p>
-                    <p>
-                        <font size="3" >Horario: {{horarioDActual.hora_inicio}} a  {{horarioDActual.hora_fin}}</font>
-                    </p>
                 </div>
+                <div  class="col-sm-7">
+                    <div *ngIf="misSol.aceptado">
+                        <font size="3" color="grey">Ahora que tu solicitud fue aceptada</font>
+                        <font size="3" color="grey"> puedes contactarte con tu compañero</font>
+                        <br>
+                        <img class="category" src="/assets/generos/{{misSol.prestador.genero}}.svg" width="100px" height="100px">
+                        <br>
+                        <font size="4"><font size="3" color="grey">Nombre: </font> {{misSol.prestador.name}}</font>
+                        <br>
+                        <font size="4"><font size="3" color="grey">Email: </font> {{misSol.prestador.email}}</font>
+                        <br>
+                        <font size="4"><font size="3" color="grey">Cel: </font> {{misSol.prestador.celular}}</font>
 
+                    </div>
+                    <div *ngIf="!misSol.aceptado">
+                        <font size="4" color="red">Esta solicitud no ha sido aceptada!!!!</font>
+                        <br>
+                        <font size="3" color="red">Espera a que tu compañero apruebe esta solicitud</font>
+                    </div>
+                </div>
             </div>
-            <hr>
+
+
         </div>
+
+
+
+
+        <br>
     </div>
 
+</div>
+
+
+<img  src="/assets/brand/imagenU.jpg" width="850px" height="281px">
+<h1>Mis Solicitudes a aprovar ...</h1>
+<br>
+<font size="5">A continuación, lo que ten han pedido prestado:</font>
+
+<div class="row">
+
+    <div *ngFor="let misPres of misObjetosPrestados" class="col-xs-6 col-xs-3">
+        <div class="card"  style="width:900px">
+            <div class="row ">
+                <div class="col-sm-5">
+
+                    <font size="4">{{misPres.objetoOfrecido.objeto_ofrecido.name}}</font>
+                    <br>
+                    <img class="category" src="{{misPres.objetoOfrecido.objeto_ofrecido.image}}" width="100px" height="100px">
+                    <hr>
+                    <font size="4">{{misPres.objetoOfrecido.descripcion}}</font>
+                    <hr>
+                    <font size="4"><font size="3" color="grey">Precio: </font>${{misPres.objetoOfrecido.precio}} COP</font>
+                    <br>
+                    <font size="4"><font size="3" color="grey">Dia: </font>{{misPres.horariosDisponibles.dia}}</font>
+                    <br>
+                    <font size="4"><font size="3" color="grey">Desde: </font> {{misPres.horariosDisponibles.hora_inicio}}</font>
+                    <br>
+                    <font size="4"><font size="3" color="grey">Hasta: </font> {{misPres.horariosDisponibles.hora_fin}}</font>
+
+
+                </div>
+                <div  class="col-sm-7">
+                    <font size="3" color="grey">Solicitud</font>
+                    <br>
+                    <img class="category" src="/assets/generos/{{misPres.solicitante.genero}}.svg" width="100px" height="100px">
+                    <br>
+                    <font size="4"><font size="3" color="grey">Nombre: </font> {{misPres.solicitante.name}}</font>
+                    <br>
+                    <font size="4"><font size="3" color="grey">Email: </font> {{misPres.solicitante.email}}</font>
+                    <br>
+                    <font size="4"><font size="3" color="grey">Cel: </font> {{misPres.solicitante.celular}}</font>
+
+                    <div *ngIf="misPres.aceptado">
+                        <font size="5" color="red">Solicitud Aprobada</font>
+                    </div>
+                    <div *ngIf="!misPres.aceptado">
+                        <font size="5" color="red">Aprobar</font>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+        <br>
+    </div>
 
 </div>
