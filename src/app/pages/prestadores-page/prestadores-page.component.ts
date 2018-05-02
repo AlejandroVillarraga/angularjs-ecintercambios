@@ -73,7 +73,7 @@ export class PrestadoresPageComponent implements OnInit {
 
 
                                                     this.objetoOfrecidoService.savePrestamo(prestamo).subscribe(prestamoResponse => {
-                                                              this.router.navigate(['/objetos']);
+                                                              this.router.navigate(['/solicitud']);
 
 
                                                       }, error => {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrestamoService } from '../../services/prestamo.service';
-
+import { Router } from '@angular/router';
 import { Prestamo } from '../../models/prestamo';
 
 @Component({
@@ -12,8 +12,12 @@ export class SolicitudPageComponent implements OnInit {
 
   private misSolicitudes: Prestamo[] = [];
   private misObjetosPrestados: Prestamo[] = [];
+  private prestamoTemp: Prestamo;
 
-  constructor(public prestamoService: PrestamoService) { }
+  constructor(public prestamoService: PrestamoService,
+                public router: Router){
+
+    }
 
 
   ngOnInit() {
@@ -22,19 +26,23 @@ export class SolicitudPageComponent implements OnInit {
 
     this.prestamoService.getMisObjetosPrestados().subscribe(prestamoResponse=>{
        this.misObjetosPrestados = prestamoResponse;
-        console.log(this.misObjetosPrestados);
 
         this.prestamoService.getMisSolicitudes().subscribe(prestamoResponse=>{
            this.misSolicitudes = prestamoResponse;
-            console.log(this.misSolicitudes);
         })
 
     })
 
-
-
-
-
   }
+
+
+    aprobarPrestamo(id: string){
+
+        this.prestamoService.aprobarPrestamo(id).subscribe(prestamoResponse=>{
+           this.prestamoTemp = prestamoResponse;
+            this.router.navigate(['/solicitud']);
+        })
+
+    }
 
 }

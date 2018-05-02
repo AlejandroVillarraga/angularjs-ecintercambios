@@ -10,3 +10,21 @@
     border-color: black;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
+.styleA{
+    background-color: #0e6ebe;
+    color: white;
+    padding: 8px 30px;
+    text-aling: center;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.9s;
+        cursor: pointer;
+
+}
+
+.styleA:hover {
+    background-color: white;
+    color: #0e6ebe;
+}

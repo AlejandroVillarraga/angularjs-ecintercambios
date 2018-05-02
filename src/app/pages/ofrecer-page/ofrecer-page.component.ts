@@ -33,6 +33,9 @@ export class OfrecerPageComponent implements OnInit {
     private hora_inicio3: string;
     private hora_fin3: string;
 
+    private textBoton: string;
+    private textError: string;
+
 
 
 
@@ -50,28 +53,39 @@ export class OfrecerPageComponent implements OnInit {
 
 
   ofrecerObjeto(){
-
-
+    this.textError = "";
+    this.textBoton = "Registrando objeto, espera un momento ...";
     this.usersService.getUserByEmail().subscribe(userResponse => {
         this.userTemp = userResponse;
         this.objetoService.getObjeto(this.objeto).subscribe(objetoResponse=>{
             this.objetoTemp = objetoResponse;
             var obf: ObjetoOfrecido;
             obf = new ObjetoOfrecido(this.userTemp, this.objetoTemp, this.signUpForm.get('descripcion').value, this.signUpForm.get('precio').value);
+
+
+            if(this.dia1==null || this.hora_inicio1==null || this.hora_fin1==null){
+                this.textBoton = "Ofrecer Objeto";
+                this.textError = "Debes registrar almenos un horario completo";
+            }
+            else{
+
             this.usersService.addObjetoOfrecido(obf).subscribe(objetoResponse=>{
                 obf = objetoResponse;
-                window.alert("Ya fue creado");
                 this.router.navigate(['objetos']);
                 this.objetoOfrecidoService.addHorarioDisponible(new HorariosDisponibles(this.dia1,this.hora_inicio1,this.hora_fin1)).subscribe(objetoResponse=>{
                 })
                 this.objetoOfrecidoService.addHorarioDisponible(new HorariosDisponibles(this.dia2,this.hora_inicio2,this.hora_fin2)).subscribe(objetoResponse=>{
-
-
                 })
                 this.objetoOfrecidoService.addHorarioDisponible(new HorariosDisponibles(this.dia3,this.hora_inicio3,this.hora_fin3)).subscribe(objetoResponse=>{
 
                 })
         })
+
+            }
+
+
+
+
 
         })
       }, error => {
@@ -84,6 +98,7 @@ export class OfrecerPageComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0)
+    this.textBoton = "Ofrecer Objeto";
     this.objetoService.getObjetos().subscribe(objetoResponse=>{
        this.objetoList = objetoResponse;
     })
