@@ -5,7 +5,6 @@
 </button>
 
   <a  class="navbar-brand" routerLinkActive="/objetos" routerLink="/objetos">
-    <img src="/assets/brand/logo.svg" width="25" height="25">
     ECI OBJECTS
   </a>
     &nbsp;
@@ -23,6 +22,10 @@
             <a routerLinkActive="/solicitud" routerLink="/solicitud"  class="nav-link" class="styleA" >Solicitudes</a>
         </li>
         &nbsp;
+      <li *ngIf="isAdministrator() && isLoggedIn() " class="nav-item">
+        <a routerLinkActive="/administrador" routerLink="/administrador"  class="nav-link" class="styleA" >Administrador</a>
+      </li>
+      &nbsp;
     </ul>
     <ul class="navbar-nav lr-auto">
       <li class="nav-item">

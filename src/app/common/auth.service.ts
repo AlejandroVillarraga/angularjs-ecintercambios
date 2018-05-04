@@ -21,6 +21,11 @@ constructor(public router: Router, public appData: AppDataService) { }
     return this.appData.accessToken != null && this.appData.accessToken !== undefined;
   }
 
+  public isAdministrator(): boolean {
+    var data = sessionStorage.getItem("currentUser");
+    return data == "administrador";
+  }
+
   public signOut() {
     this.appData.removeAccessToken();
     this.router.navigate(['objetos'])

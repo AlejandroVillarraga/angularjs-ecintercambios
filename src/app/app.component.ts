@@ -20,11 +20,15 @@ export class AppComponent {
       this.router.navigate(['/objetos']);
     }
     this.router.navigate(['/objetos']);
-    this.signOut();
+    //this.signOut();
   }
 
   isLoggedIn() {
     return this.authService.isLoggedIn();
+  }
+
+  isAdministrator() {
+    return this.authService.isAdministrator();
   }
 
   signOut() {

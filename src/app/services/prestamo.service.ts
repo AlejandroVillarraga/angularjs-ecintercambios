@@ -32,6 +32,10 @@ constructor(
     return this.get(this.resourceUrl+"getMisObjetosPrestados/"+data);
   }
 
+  getAllPrestamos(): Observable<Prestamo[]> {
+    return this.get(this.resourceUrl+"getAll");
+  }
+
 
   aprobarPrestamo(id: string): Observable<Prestamo> {
     return this.post(this.resourceUrl+"aprobarPrestamo/"+id, id);

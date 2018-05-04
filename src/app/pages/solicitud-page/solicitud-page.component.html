@@ -30,7 +30,7 @@
                 </div>
                 <div  class="col-sm-7">
                     <div *ngIf="misSol.aceptado">
-                        <font size="5" color="red">Solicitud Aprobada</font>
+                        <font size="5" color="blue">Solicitud Aprobada</font>
                         <br>
                         <font size="3" color="grey">Ahora que tu solicitud fue aceptada</font>
                         <font size="3" color="grey"> puedes contactarte con tu compañero</font>
@@ -39,15 +39,13 @@
                         <br>
                         <font size="4"><font size="3" color="grey">Nombre: </font> {{misSol.prestador.name}}</font>
                         <br>
-                        <font size="4"><font size="3" color="grey">Email: </font> {{misSol.prestador.email}}</font>
+                        <img class="category" src="/assets/estrellas/{{misSol.prestador.calificacion}}.png" width="200px" height="40px">
                         <br>
-                        <font size="4"><font size="3" color="grey">Cel: </font> {{misSol.prestador.celular}}</font>
+                        <font size="1">Número de opiniones: {{misSol.prestador.numeroDeOpiniones}}</font>
 
                     </div>
                     <div *ngIf="!misSol.aceptado">
-                        <font size="4" color="red">Esta solicitud no ha sido aceptada!!!!</font>
-                        <br>
-                        <font size="3" color="red">Espera a que tu compañero apruebe esta solicitud</font>
+                        <font size="5" color="red">Espera a que esta solicitud sea aprobada</font>
                     </div>
                 </div>
             </div>
@@ -99,15 +97,15 @@
                     <br>
                     <font size="4"><font size="3" color="grey">Nombre: </font> {{misPres.solicitante.name}}</font>
                     <br>
-                    <font size="4"><font size="3" color="grey">Email: </font> {{misPres.solicitante.email}}</font>
+                    <img class="category" src="/assets/estrellas/{{misPres.solicitante.calificacion}}.png" width="200px" height="40px">
                     <br>
-                    <font size="4"><font size="3" color="grey">Cel: </font> {{misPres.solicitante.celular}}</font>
+                    <font size="1">Número de opiniones: {{misPres.solicitante.numeroDeOpiniones}}</font>
 
                     <div *ngIf="misPres.aceptado">
-                        <font size="5" color="red">Solicitud Aprobada</font>
+                        <font size="5" color="blue">Solicitud Aprobada</font>
                     </div>
                     <div *ngIf="!misPres.aceptado">
-                        <a class="styleA" (click)="aprobarPrestamo(misPres.id)" routerLinkActive="/home" routerLink="/home">Aprobar</a>
+                        <font size="5" color="red">Espera a que esta solicitud sea aprobada</font>
                     </div>
 
                 </div>

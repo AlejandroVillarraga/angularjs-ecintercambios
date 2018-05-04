@@ -8,6 +8,8 @@ import { FormGroup, FormBuilder,FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { AdministradorPageComponent } from './pages/administrador-page/administrador-page.component';
+
 import { OfrecerPageComponent } from './pages/ofrecer-page/ofrecer-page.component';
 
 import { SolicitudPageComponent } from './pages/solicitud-page/solicitud-page.component';
@@ -48,6 +50,7 @@ const ROUTES = [
 { path: 'signup', component: SignUpPageComponent },
 { path: 'ofrecerObjeto', component: OfrecerPageComponent },
 { path: 'solicitud', component: SolicitudPageComponent },
+{ path: 'administrador', component: AdministradorPageComponent },
 {path: '**', component: PageNotFoundComponent}
 ]
 
@@ -61,7 +64,8 @@ const ROUTES = [
     PrestadoresPageComponent,
     SignUpPageComponent,
     SolicitudPageComponent,
-    OfrecerPageComponent
+    OfrecerPageComponent,
+    AdministradorPageComponent
   ],
   imports: [
     HttpModule,
