@@ -6,6 +6,7 @@ import { APIService } from '.././common/api.service';
 import { AppConfiguration } from '.././common/config/app-configuration.service';
 import { AuthService } from '.././common/auth.service';
 import { User } from '.././models/user';
+import { Calificacion } from '.././models/calificacion';
 
 import { ObjetoOfrecido } from '.././models/objetoOfrecido';
 import {Observable} from 'rxjs/Observable';
@@ -46,6 +47,11 @@ constructor(
     return this.post("user/addObjetoOfrecido/"+data,obf);
 
   }
+
+  setCalification(cal: Calificacion): Observable<Calificacion> {
+    return this.post("calificacion/addCalificacion",cal);
+
+    }
 
 
 

@@ -1,5 +1,0 @@
-insert into user values
-	('cv',2,345345,'cv','femenino',43,'cv','cv'),
-	('av',4,3434234,'av','masculino',23,'av','av')
-;
-

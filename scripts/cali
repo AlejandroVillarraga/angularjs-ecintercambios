@@ -1,0 +1,8 @@
+insert into calificacion values
+	(45,2,'camila.vieda@mail.escuelaing.edu.co'),
+	(44,4,'danilo.villarraga@mail.escuelaing.edu.co'),
+	(4,5,'camila.vieda@mail.escuelaing.edu.co'),
+	(3,5,'danilo.villarraga@mail.escuelaing.edu.co'),
+	(2,1,'camila.vieda@mail.escuelaing.edu.co'),
+	(1,4,'danilo.villarraga@mail.escuelaing.edu.co')
+;

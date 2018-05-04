@@ -5,7 +5,7 @@
     <br>
     <div class="row">
         <div *ngFor="let misSol of solicitudes" class="col-xs-12 col-xs-3">
-            <div class="card"  style="width:1350px">
+            <div class="card"  style="width:1300px">
                 <div class="row ">
                     <div class="col-sm-4">
                         <font size="4"><font size="3" color="grey">Código del prestamo: </font>{{misSol.id}}</font>
@@ -28,9 +28,9 @@
 
                         </div>
                         <div *ngIf="!misSol.aceptado">
-                            <font size="5" color="red">Solicitud Pendiente</font>
+                            <font size="5" color="red">Solicitud en proceso</font>
                             <br>
-                            <a class="styleA" (click)="aprobarPrestamo(misSol.id)" routerLinkActive="/home" routerLink="/home">Aprobar</a>
+                            <a class="styleA" (click)="aprobarPrestamo(misSol.id)" routerLinkActive="/home" routerLink="/home">Cerrar proceso</a>
                         </div>
 
                     </div>

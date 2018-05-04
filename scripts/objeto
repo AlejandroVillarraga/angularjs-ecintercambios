@@ -1,7 +1,6 @@
 insert into objeto values
 	('Tablas de expresion','/assets/objetos/tabladeexpresion.jpg'),
 	('Overol','/assets/objetos/overol.jpg'),
-	('Libro','/assets/objetos/libro.jpg'),
 	('Gafas de Seguridad','/assets/objetos/gafasdeseguridad.jpg'),
 	('Escuadras','/assets/objetos/escuadras.png'),
 	('Calculadora','/assets/objetos/calculadora.jpg'),

@@ -1,5 +1,0 @@
-insert into objeto_ofrecido values
-	(3,'asdgasdfg',1000,'Bata','camila.vieda@mail.escuelaing.edu.co'),
-	(2,'asdfasd',2000,'Botas','camila.vieda@mail.escuelaing.edu.co'),
-	(1,'asdfasd',2000,'Bata','danilo.villarraga@mail.escuelaing.edu.co')
-;

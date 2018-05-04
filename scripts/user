@@ -1,0 +1,5 @@
+insert into user values
+	('danilo.villarraga@mail.escuelaing.edu.co',4,'3158823178.00','masculino','Alejandro Villarraga',3,1234,'danilo.villarraga'),
+	('camila.vieda@mail.escuelaing.edu.co',3,'3182746392.00','femenino','Camila Vieda',3,1234,'camila.vieda'),
+	('administrador@mail.escuelaing.edu.co',0,'3158823178.00','masculino','administrador',0,1234,'administrador')
+;

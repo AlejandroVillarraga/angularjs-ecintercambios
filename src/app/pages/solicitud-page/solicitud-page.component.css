@@ -12,7 +12,27 @@
 }
 
 .styleA{
+    background-color: white;
+    color: #0e6ebe;
+    padding: 4px 4px;
+    text-aling: center;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.9s;
+        cursor: pointer;
+
+}
+
+.styleA:hover {
     background-color: #0e6ebe;
+    color: white;
+
+}
+
+
+.styleB{
+    background-color: #41E83B;
     color: white;
     padding: 8px 30px;
     text-aling: center;
@@ -24,7 +44,8 @@
 
 }
 
-.styleA:hover {
-    background-color: white;
+.styleB:hover {
+    background-color: #95F392;
     color: #0e6ebe;
 }
+
