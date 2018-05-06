@@ -64,12 +64,17 @@ export class SolicitudPageComponent implements OnInit {
     }
 
     calificar(username: string){
-        console.log(username);
+
+        this.router.navigate(['/home']);
         this.usersService.getUser(username+"@mail.escuelaing.edu.co.").subscribe(userResponse=>{
            this.userACalificar = userResponse;
             var cal = new Calificacion(this.calificacion, this.userACalificar);
 
                 this.usersService.setCalification(cal).subscribe(calResponse=>{
+
+
+                    this.router.navigate(['/solicitud']);
+
                 })
 
 

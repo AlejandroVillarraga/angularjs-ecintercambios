@@ -78,7 +78,7 @@ const ROUTES = [
     {
       provide: INITIAL_CONFIG,
       useValue: {
-        apiURL: 'https://ecintercambios.herokuapp.com'
+        apiURL: 'https://eciobjects.herokuapp.com'
       }
     },
     AppConfiguration,

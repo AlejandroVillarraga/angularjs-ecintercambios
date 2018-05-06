@@ -39,7 +39,7 @@ export class PrestadoresPageComponent implements OnInit {
     this.objetoOfrecidoService.getObjetosOfrecidosByName(data).subscribe(objetoResponse=>{
        this.objetosOfrecidosList = objetoResponse;
         if(this.objetosOfrecidosList.length==0){
-            this.errorText = "Lo sentimos !!!! No se ha registrado ningin "+data+".";
+            this.errorText = "Lo sentimos !!!! No se ha registrado ningun "+data+".";
         }
         else{
             this.errorText = "";
