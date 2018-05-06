@@ -20,7 +20,8 @@ export class AppComponent {
       this.router.navigate(['/objetos']);
     }
     this.router.navigate(['/objetos']);
-    //this.signOut();
+    this.signOut();
+    window.scroll(0,0)
   }
 
   isLoggedIn() {

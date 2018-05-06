@@ -11,7 +11,8 @@
           <div class="card"  style="width:900px">
             <div class="row ">
                 <div class="col-sm-5">
-
+                    <font size="4"><font size="3" color="grey">Código del prestamo: </font>{{misSol.id}}</font>
+                    <br>
                     <font size="4">{{misSol.objetoOfrecido.objeto_ofrecido.name}}</font>
                     <br>
                     <img class="category" src="{{misSol.objetoOfrecido.objeto_ofrecido.image}}" width="100px" height="100px">
@@ -79,7 +80,7 @@
 
 
 <img  src="/assets/brand/imagenU.jpg" width="850px" height="281px">
-<h1>Mis Solicitudes a aprovar ...</h1>
+<h1>Mis Solicitudes ...</h1>
 <br>
 <font size="5">A continuación, lo que ten han pedido prestado:</font>
 
@@ -90,6 +91,8 @@
             <div class="row ">
                 <div class="col-sm-5">
 
+                    <font size="4"><font size="3" color="grey">Código del prestamo: </font>{{misPres.id}}</font>
+                    <br>
                     <font size="4">{{misPres.objetoOfrecido.objeto_ofrecido.name}}</font>
                     <br>
                     <img class="category" src="{{misPres.objetoOfrecido.objeto_ofrecido.image}}" width="100px" height="100px">
@@ -114,7 +117,7 @@
                         <font size="5" color="blue">Solicitud Terminada</font>
                     </div>
                     <div *ngIf="!misPres.aceptado">
-                        <font size="5" color="red">Espera a que esta solicitud sea aprobada</font>
+                        <font size="5" color="red">Espera a que se gestione el intercambio, pronto te contactaremos</font>
                     </div>
 
                     <font size="3" color="blue">Solicitante:</font>
@@ -142,10 +145,6 @@
 
 
                         <a class="styleB"  (click)="calificar(misPres.solicitante.username)" >Calificar a {{misPres.solicitante.name}} con un {{calificacion}}</a>
-
-
-
-
 
                     </div>
                 </div>

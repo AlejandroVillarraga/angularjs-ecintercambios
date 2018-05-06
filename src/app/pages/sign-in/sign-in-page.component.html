@@ -18,7 +18,7 @@
                 <input type="password" class="form-control inpCorto" id="alterEgo" formControlName="password" required>
             </div>
 
-            <button type="submit" class="btn btn-success" [disabled]="!signInForm.valid">Ingresa</button>
+            <button type="submit" class="btn btn-success" [disabled]="!signInForm.valid">{{loader}}</button>
 
             <p class="text-danger mt-1" *ngIf="loginError">{{loginError}}</p>
 

@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class SignInPageComponent implements OnInit {
     public signInForm: FormGroup;
     public loginError: string;
+    public loader: string;
 
 
   constructor(public formBuilder:FormBuilder,public usersService: UsersService,public router: Router) {
@@ -26,6 +27,7 @@ export class SignInPageComponent implements OnInit {
   }
 
   doLogin() {
+        this.loader="Cargando ...";
     sessionStorage.setItem("currentUser", this.signInForm.get('email').value);
 
     this.loginError="";
@@ -34,6 +36,7 @@ export class SignInPageComponent implements OnInit {
       this.signInForm.get('password').value).subscribe(loginResponse => {
         this.router.navigate(['objetos']);
       }, error => {
+        this.loader="Ingresa";
         this.loginError = "Error al ingresar, por favor verifica tu correo y contraseña";
       })
   }
@@ -42,5 +45,6 @@ export class SignInPageComponent implements OnInit {
     ngOnInit() {
         window.scroll(0,0)
         this.loginError="";
+        this.loader="Ingresa";
   }
 }

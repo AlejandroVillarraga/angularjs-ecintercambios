@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 export class SignUpPageComponent implements OnInit {
     public signUpForm: FormGroup;
     public genero: string;
+    public error: string;
+    public loader: string;
 
 
   constructor(public formBuilder:FormBuilder,public usersService: UsersService,public router: Router) {
@@ -28,24 +30,42 @@ export class SignUpPageComponent implements OnInit {
   }
 
   signUp() {
-    this.usersService.signUp(
-      this.signUpForm.get('email').value+"@mail.escuelaing.edu.co",
-      this.signUpForm.get('password').value,
-      this.signUpForm.get('name').value,
-      this.signUpForm.get('email').value,
-      this.genero,
-      this.signUpForm.get('celphone').value).subscribe(loginResponse => {
-        this.usersService.login(
-             this.signUpForm.get('email').value+"@mail.escuelaing.edu.co",
-             this.signUpForm.get('password').value).subscribe(loginResponse => {
-                    sessionStorage.setItem("currentUser", this.signUpForm.get('email').value);
-                    this.router.navigate(['objetos']);
+    this.loader="Cargando ...";
+    this.usersService.getUser(this.signUpForm.get('email').value+"@mail.escuelaing.edu.co.").subscribe(loginResponse => {
+
+                        this.error="Este Email ya esta registrado en el sistema.";
+
+                        this.loader="Registrate";
                 }, error => {
+
+                   this.usersService.signUp(
+                      this.signUpForm.get('email').value+"@mail.escuelaing.edu.co",
+                      this.signUpForm.get('password').value,
+                      this.signUpForm.get('name').value,
+                      this.signUpForm.get('email').value,
+                      this.genero,
+                      this.signUpForm.get('celphone').value).subscribe(loginResponse => {
+                        this.usersService.login(
+                             this.signUpForm.get('email').value+"@mail.escuelaing.edu.co",
+                             this.signUpForm.get('password').value).subscribe(loginResponse => {
+                                    sessionStorage.setItem("currentUser", this.signUpForm.get('email').value);
+                                    this.router.navigate(['objetos']);
+                                }, error => {
+                                })
+
+                      }, error => {
+                        this.error="Error";
+                      })
+
+
+
+
                 })
 
-      }, error => {
 
-      })
+
+
+
   }
 
   saveGender(genero: string){
@@ -56,6 +76,9 @@ export class SignUpPageComponent implements OnInit {
 
     ngOnInit() {
         window.scroll(0,0)
+        this.error="";
+        this.loader="Registrate";
+
 
   }
 }

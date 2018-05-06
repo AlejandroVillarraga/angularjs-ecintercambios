@@ -28,7 +28,7 @@ export class AdministradorPageComponent implements OnInit {
 
         this.prestamoService.aprobarPrestamo(id).subscribe(prestamoResponse=>{
            this.prestamoTemp = prestamoResponse;
-            this.router.navigate(['/solicitud']);
+            this.router.navigate(['/administrador']);
         })
 
     }

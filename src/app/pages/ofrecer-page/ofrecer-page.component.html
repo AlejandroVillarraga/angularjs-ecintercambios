@@ -4,10 +4,11 @@
 
     <div class="card" >
         <h2>Ofrece un objeto</h2>
+        <font size="1" color="grey">campos obligatorios (<font color="red" >*</font>)</font>
         <br>
         <p>Selecciona un objeto para prestar:</p>
-        <div class="dropdown">
-            <span class="styleA">Objeto: {{objeto}}</span>
+        <div class="dropdown divcorto">
+            <span class="styleA">Objeto<font color="red" >*</font>: {{objeto}}</span>
             <div class="dropdown-content">
                 <a class="nav-link"  (click)="saveObjeto(ob.name)" *ngFor="let ob of objetoList">{{ob.name}}</a>
             </div>
@@ -17,17 +18,18 @@
         <form [formGroup]="signUpForm" (ngSubmit)="ofrecerObjeto()" novalidate>
 
             <div class="form-group">
-                <label for="descripcion">Descripción</label>
+                <label for="descripcion">Descripción<font color="red" >*</font></label>
                 <input type="text" class="form-control" id="descripcion" formControlName="descripcion" required>
             </div>
 
             <div class="form-group" >
-                <label for="precio">Precio</label>
+                <label for="precio">Precio<font color="red" >*</font></label>
                 <div class="row" align="center">
                     <input type="number" class="form-control inpCorto" id="precio" formControlName="precio" required><font size="5">COP</font>
                 </div>
             </div>
             <h2>Horarios</h2>
+            <font size="2" color="grey">Selecciona minimo un horario</font>
             <hr>
             <div class="row" align="center">
                 <h5>1er horario: </h5>&nbsp;
@@ -163,7 +165,7 @@
 
                        <hr>
 
-            <button type="submit" class="styleA" [disabled]="!signUpForm.valid">{{textBoton}}</button>
+            <button type="submit" class="btn btn-success" [disabled]="!signUpForm.valid">{{textBoton}}</button>
             <p class="text-danger mt-1" >{{textError}}</p>
 
         </form>

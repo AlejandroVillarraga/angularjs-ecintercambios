@@ -7,30 +7,17 @@
   }
 
 
-.btn {
-        background: white;
-        width: 100px;
-        height: 40px;
-    color: white;
-    padding: 5px 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
+
+.btn-success{
+    background-color: #008CBA;
+    border: none;
+    padding: 10px 20px;
+}
+
+.btn-success:hover{
     transition-duration: 0.4s;
-    cursor: pointer;
-        background-color: white;
-        color: black;
-        border: 2px solid #cf7b04;
+    opacity: 0.7;
 }
-
-.btn:hover {
-    background-color: #cf7b04;
-    color: white;
-}
-
 
 .card {
     /* Add shadows to create the "card" effect */
