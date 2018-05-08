@@ -30,11 +30,11 @@ export class SignUpPageComponent implements OnInit {
   }
 
   signUp() {
+    this.error="";
     this.loader="Cargando ...";
     this.usersService.getUser(this.signUpForm.get('email').value+"@mail.escuelaing.edu.co.").subscribe(loginResponse => {
 
                         this.error="Este Email ya esta registrado en el sistema.";
-
                         this.loader="Registrate";
                 }, error => {
 
@@ -54,7 +54,8 @@ export class SignUpPageComponent implements OnInit {
                                 })
 
                       }, error => {
-                        this.error="Error";
+                        this.error="Error, verifica que hayas llenado todos los campos obligatorios.";
+                        this.loader="Registrate";
                       })
 
 
